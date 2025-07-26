@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Alumni Birthday Galaxy 🎂</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-12 px-4 shadow-xl">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-2 animate__animated animate__fadeIn">🎉 Alumni Birthday Galaxy 🎂</h1>
+                <p class="text-xl text-blue-200">Celebrating moments that matter. Stay connected with your batchmates!</p>
+            </div>
+            <div class="flex space-x-4">
+                <button class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white py-2 px-6 rounded-full transition-all">
+                    <i class="fas fa-bell mr-2"></i> Set Reminder
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container mx-auto py-12 px-4">
+        <!-- Add Birthday Section -->
+        <div class="max-w-md mx-auto bg-purple-50 p-6 rounded-lg border border-purple-200 mb-8 animate__animated animate__fadeIn">
+            <h2 class="text-xl font-bold text-purple-800 mb-4 text-center">Add Your Birthday</h2>
+            <form id="birthdayForm">
+                <input type="text" id="name" placeholder="Full Name" class="w-full mb-3 p-2 border rounded" required>
+                <input type="text" id="batch" placeholder="Batch (e.g., 2020)" class="w-full mb-3 p-2 border rounded" required>
+                <input type="text" id="profession" placeholder="Profession" class="w-full mb-3 p-2 border rounded" required>
+                <input type="date" id="dob" class="w-full mb-3 p-2 border rounded" required>
+                <div class="mb-3">
+                    <label class="block text-gray-700 mb-1">Profile Picture (Optional)</label>
+                    <input type="file" id="profilePic" accept="image/*" class="w-full">
+                </div>
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded transition duration-300">
+                    Add Birthday 🎈
+                </button>
+            </form>
+        </div>
+
+        <!-- Today's Birthdays Section -->
+        <section class="mt-16 p-6 bg-white rounded-2xl shadow-lg animate__animated animate__fadeIn">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-3xl font-bold text-gray-800 flex items-center">
+                    🎂 Birthdays Today - <span id="todaysDate" class="ml-2 text-xl text-blue-600 font-normal"></span>
+                </h2>
+                <div class="text-gray-500 font-mono bg-gray-100 px-3 py-1 rounded-lg border border-gray-200">
+                    <span id="currentTime"></span>
+                </div>
+            </div>
+            <div id="todayList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <p class="col-span-full text-center text-gray-500 py-8">No birthdays today - check back soon!</p>
+            </div>
+        </section>
+
+        <!-- Upcoming Birthdays Section -->
+        <section class="mt-16 p-6 bg-white rounded-2xl shadow-lg animate__animated animate__fadeIn">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">📅 Upcoming Birthdays</h2>
+            <div id="upcomingList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">January</span>
+                        <span class="text-gray-500 text-sm">5 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">February</span>
+                        <span class="text-gray-500 text-sm">3 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">March</span>
+                        <span class="text-gray-500 text-sm">4 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">April</span>
+                        <span class="text-gray-500 text-sm">2 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">May</span>
+                        <span class="text-gray-500 text-sm">7 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">June</span>
+                        <span class="text-gray-500 text-sm">3 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">July</span>
+                        <span class="text-gray-500 text-sm">5 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">August</span>
+                        <span class="text-gray-500 text-sm">4 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">September</span>
+                        <span class="text-gray-500 text-sm">6 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">October</span>
+                        <span class="text-gray-500 text-sm">3 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">November</span>
+                        <span class="text-gray-500 text-sm">4 birthdays</span>
+                    </h3>
+                </div>
+                <div class="month-section">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">December</span>
+                        <span class="text-gray-500 text-sm">5 birthdays</span>
+                    </h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p class="text-blue-300">© 2025 Alumni Birthday Galaxy | Stay Connected</p>
+            <div id="currentDateTime" class="mt-2 text-blue-200 font-mono">
+                <span id="currentDate"></span> | 
+                <span id="currentTime"></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to update current time
+        function updateCurrentTime() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('en-GB', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+            document.getElementById('currentTime').textContent = timeStr;
+        }
+
+        // Set today's date display and update time
+        document.getElementById('todaysDate').textContent = 
+            new Date().toLocaleDateString('en-GB').replace(/\//g, '-');
+        
+        updateCurrentTime();
+        setInterval(updateCurrentTime, 1000);
+
+        // Scroll to today by default
+        setTimeout(() => {
+            const todaySection = document.getElementById('today');
+            if (todaySection) {
+                todaySection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 500);
+
+        // Helper function to calculate age
+        function calculateAge(birthDate) {
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        // Helper function to check if today is birthday
+        function isBirthdayToday(birthDate) {
+            const today = new Date();
+            return birthDate.getDate() === today.getDate() && 
+                   birthDate.getMonth() === today.getMonth();
+        }
+
+        // Sample birthday data
+        const sampleBirthdays = [
+            {
+                name: "Sounak Roy", 
+                batch: "2025",
+                profession: "Student",
+                dob: new Date("2007-05-07"), // Only appears on May 7
+                profilePic: "",
+                message: "Wishing you a fantastic year ahead!"
+            },
+            {
+                name: "Anant Raj",
+                batch: "2025", 
+                profession: "Student",
+                dob: new Date("2007-11-23"), // November 23 birthday
+                profilePic: "",
+                message: "Wishing you a wonderful birthday celebration!"
+            }
+        ];
+
+        // Filter to show only today's birthdays
+        const todaysBirthdays = sampleBirthdays.filter(person => isBirthdayToday(person.dob));
+        
+        // Group birthdays by month
+        const birthdaysByMonth = {};
+        sampleBirthdays.forEach(person => {
+            const monthNum = person.dob.getMonth();
+            if (!birthdaysByMonth[monthNum]) {
+                birthdaysByMonth[monthNum] = [];
+            }
+            birthdaysByMonth[monthNum].push(person);
+        });
+
+        // Initialize with sample data
+        if (!localStorage.getItem('birthdays')) {
+            localStorage.setItem('birthdays', JSON.stringify(sampleBirthdays));
+        }
+
+        // Function to populate month cards
+        function displayMonthCards() {
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                               "July", "August", "September", "October", "November", "December"];
+            
+            const upcomingList = document.getElementById('upcomingList');
+            upcomingList.innerHTML = '';
+
+            monthNames.forEach((month, index) => {
+                const birthdays = birthdaysByMonth[index] || [];
+                const monthElement = document.createElement('div');
+                monthElement.className = 'month-section';
+                monthElement.innerHTML = `
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center bg-blue-50 p-3 rounded-lg">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg px-3 py-1 mr-2">${month}</span>
+                        <span class="text-gray-500 text-sm">${birthdays.length} ${birthdays.length === 1 ? 'birthday' : 'birthdays'}</span>
+                    </h3>
+                    ${birthdays.length > 0 ? `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        ${birthdays.map(person => `
+                            <div class="birthday-card bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all">
+                                <h4 class="font-bold">${person.name}</h4>
+                                <p class="text-sm text-gray-600">${month} ${person.dob.getDate()} • Batch ${person.batch} • ${person.profession}</p>
+                                <p class="text-xs text-gray-500 mt-1">Turning ${calculateAge(person.dob) + 1}</p>
+                            </div>
+                        `).join('')}
+                    </div>` : '<p class="text-gray-500 text-center py-4">No birthdays this month</p>'}
+                `;
+                upcomingList.appendChild(monthElement);
+            });
+        }
+
+        // Display month cards
+        displayMonthCards();
+
+        // Rest of your existing script.js functionality
+    </script>
+</body>
+</html>
