@@ -1,0 +1,50 @@
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animate__fadeIn {
+    animation-name: fadeIn;
+}
+
+/* Birthday Cards */
+.birthday-card {
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.birthday-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Month Sections */
+.month-section {
+    margin-bottom: 2rem;
+}
+
+.month-section h3 {
+    padding: 0.75rem;
+    background: #eff6ff;
+    border-radius: 0.5rem;
+}
+
+/* Form Styles */
+#birthdayForm input,
+#birthdayForm button {
+    transition: all 0.2s ease;
+}
+
+#birthdayForm input:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
